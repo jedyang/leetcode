@@ -119,3 +119,25 @@
               return true;
           }
       }
+### 版本3.0。这个复杂度应该是O(n)了吧，居然还是超时。。。。。  
+
+    public int lengthOfLongestSubstring(String s)
+    {
+        String max = "";
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < s.length(); i++)
+        {
+
+            String temp = String.valueOf(s.charAt(i));
+            if (-1 != sb.indexOf(temp))
+            {
+                sb.delete(0, sb.indexOf(temp) + 1);
+            }
+            sb.append(temp);
+            if (max.length() < sb.length())
+            {
+                max = sb.toString();
+            }
+        }
+        return max.length();
+    }
