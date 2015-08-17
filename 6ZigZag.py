@@ -9,6 +9,7 @@ class Solution:
     C E   I K   O
     D     J     P
     ```
+    # 主要思路是用字典存储行与该行的数据，然后判断每个字符属于哪行，加入对应的字典中
     def convert(self, s, numRows):
         resultDict = {}
         step = 2 * numRows - 2
